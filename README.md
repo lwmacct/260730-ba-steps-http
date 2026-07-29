@@ -1,5 +1,7 @@
 # BA HTTP Steps
 
+`BA` 是 Browser Automation（浏览器自动化）的缩写。
+
 `@lwmacct/260730-ba-steps-http` 是一个可信任的通用 HTTP Step Pack。它通过 Step input
 接收目标地址、Authorization、headers、query 和 JSON body，并返回有限 JSON/text
 响应事实。本包不拥有任何具体服务、账号或业务数据模型。
