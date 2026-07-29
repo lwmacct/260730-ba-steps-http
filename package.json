@@ -1,0 +1,44 @@
+{
+  "name": "@lwmacct/260730-ba-steps-http",
+  "version": "0.1.260730",
+  "description": "Trusted generic HTTP Step Pack for Context Baton automation",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lwmacct/260730-ba-steps-http.git"
+  },
+  "homepage": "https://github.com/lwmacct/260730-ba-steps-http#readme",
+  "bugs": {
+    "url": "https://github.com/lwmacct/260730-ba-steps-http/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist", "README.md"],
+  "engines": { "node": ">=20" },
+  "packageManager": "pnpm@11.17.0",
+  "publishConfig": { "access": "public" },
+  "sideEffects": false,
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "check": "pnpm run typecheck && pnpm run test && pnpm run build",
+    "prepack": "pnpm run build",
+    "test": "tsx --test src/*.test.ts src/**/*.test.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@lwmacct/260729-ba-context-baton": "^0.6.260730",
+    "@lwmacct/260729-ba-framework": "^0.7.260730"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.2",
+    "tsx": "^4.23.1",
+    "typescript": "^7.0.2"
+  }
+}
