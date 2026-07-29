@@ -1,6 +1,6 @@
 /**
  * 步骤用途：
- * 向 Baton 指定的任意 HTTP(S) API 发起 JSON/text 请求并返回响应事实；
+ * 向 input.baseUrl 指定的任意 HTTP(S) API 发起 JSON/text 请求并返回响应事实；
  * 不识别页面状态，不依赖页面 URL，也不包含任何具体服务或账号领域逻辑。
  */
 import type { JsonValue } from "@lwmacct/260729-ba-context-baton";

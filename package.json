@@ -1,6 +1,6 @@
 {
   "name": "@lwmacct/260730-ba-steps-http",
-  "version": "0.1.260730",
+  "version": "0.2.260730",
   "description": "Trusted generic HTTP Step Pack for Context Baton automation",
   "license": "Apache-2.0",
   "repository": {
