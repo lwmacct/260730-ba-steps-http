@@ -16,8 +16,8 @@ importers:
         version: 0.7.260730
     devDependencies:
       '@lwmacct/260729-ba-executor':
-        specifier: ^0.6.260730
-        version: 0.6.260730
+        specifier: ^0.7.260730
+        version: 0.7.260730
       '@types/node':
         specifier: ^26.1.2
         version: 26.1.2
@@ -200,8 +200,8 @@ packages:
     resolution: {integrity: sha512-be/VpG6HEpHfCgU79vnNEbZ13358zpeZlZdzTAljt/GqnXXAnUzfob+weVofBq8vptDq/nx0Mlj2Uqm1lTvmbg==}
     engines: {node: '>=20'}
 
-  '@lwmacct/260729-ba-executor@0.6.260730':
-    resolution: {integrity: sha512-gNV8cBGyt4SlTKHK2MBVwLQ8FkpQaGYiVP5NS5FFwz0gYQ/D61qN0MCatd28IfnE96LlhAutXI5xvWXrDqK/jg==}
+  '@lwmacct/260729-ba-executor@0.7.260730':
+    resolution: {integrity: sha512-iFbTaEyx5FsQICEyeF6p9GWzB4pStxIfWZHu0eIxjcYXZsH8rqtZL5kEVKAhDMm0LmTHF4xMCqwlYrZ/zypVSA==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -451,7 +451,7 @@ snapshots:
 
   '@lwmacct/260729-ba-context-baton@0.6.260730': {}
 
-  '@lwmacct/260729-ba-executor@0.6.260730':
+  '@lwmacct/260729-ba-executor@0.7.260730':
     dependencies:
       '@hono/node-server': 2.0.12(hono@4.12.32)
       '@lwmacct/260729-ba-context-baton': 0.5.260729

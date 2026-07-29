@@ -23,15 +23,26 @@ Executor 可以把默认导出作为普通可加载 Step Pack 注册。
 
 ## 本地运行
 
-本仓库可通过开发依赖中的 BA Executor 直接加载包根目录。`pnpm start` 会先构建 Pack，
-再启动 HTTP 服务：
+本仓库可通过开发依赖中的 BA Executor 直接加载包根目录：
 
 ```bash
-pnpm start
-pnpm start -- --port 3001
+pnpm run start
+pnpm run start -- --port 3001
+pnpm run dev
+pnpm run dev -- --port 3001
 ```
 
-Executor 仅用于本仓库的本地运行和验证，不会打入发布的 Pack。
+`start` 构建一次并启动 HTTP Host；`dev` 监听源码，在构建成功后自动重启 Host。Executor
+仅用于本仓库的本地运行和验证，不会打入发布的 Pack。
+
+也可以从命令行执行本地 Baton：
+
+```bash
+pnpm run cli -- --context ./local.json --entry example-entry --mode single
+```
+
+`single` 只执行指定 entry，`continue` 会继续执行后续计划。CLI 会原子写回 Baton 文件；
+包含 Authorization、目标地址或执行结果的本地文件不应提交。
 
 ## `http/request`
 
