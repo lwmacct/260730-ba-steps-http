@@ -21,6 +21,18 @@ Step: http/request
 
 Executor 可以把默认导出作为普通可加载 Step Pack 注册。
 
+## 本地运行
+
+本仓库可通过开发依赖中的 BA Executor 直接加载包根目录。`pnpm start` 会先构建 Pack，
+再启动 HTTP 服务：
+
+```bash
+pnpm start
+pnpm start -- --port 3001
+```
+
+Executor 仅用于本仓库的本地运行和验证，不会打入发布的 Pack。
+
 ## `http/request`
 
 输入：

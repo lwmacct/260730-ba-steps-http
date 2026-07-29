@@ -15,6 +15,9 @@ importers:
         specifier: ^0.7.260730
         version: 0.7.260730
     devDependencies:
+      '@lwmacct/260729-ba-executor':
+        specifier: ^0.6.260730
+        version: 0.6.260730
       '@types/node':
         specifier: ^26.1.2
         version: 26.1.2
@@ -183,12 +186,27 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@hono/node-server@2.0.12':
+    resolution: {integrity: sha512-eWpQYr67tqJLeaSUl0Q+TquuYfUdTibpOJlUMV2FfUP7+KqCC5TufnwnlXL6mobZBJbGAYRd7ZvEBDCbLInjhg==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      hono: ^4
+
   '@lwmacct/260729-ba-context-baton@0.5.260729':
     resolution: {integrity: sha512-DGY8rQoGu5B/pHcdfGPFjGNUy7ZCQ0yegHEjvy7/nMA4pi8BI8D/vzZktLLoQmV8Vr8xI1IGBme0WqXZZJfX7Q==}
     engines: {node: '>=20'}
 
   '@lwmacct/260729-ba-context-baton@0.6.260730':
     resolution: {integrity: sha512-be/VpG6HEpHfCgU79vnNEbZ13358zpeZlZdzTAljt/GqnXXAnUzfob+weVofBq8vptDq/nx0Mlj2Uqm1lTvmbg==}
+    engines: {node: '>=20'}
+
+  '@lwmacct/260729-ba-executor@0.6.260730':
+    resolution: {integrity: sha512-gNV8cBGyt4SlTKHK2MBVwLQ8FkpQaGYiVP5NS5FFwz0gYQ/D61qN0MCatd28IfnE96LlhAutXI5xvWXrDqK/jg==}
+    engines: {node: '>=20'}
+    hasBin: true
+
+  '@lwmacct/260729-ba-framework@0.5.260729':
+    resolution: {integrity: sha512-GA3rUtPKPrJTiCFA91fMD08Lop0fvE7KmnNxSUidmJ5RpP3BPYLq4f5N5SPgiIpHdI2LwqB5U6a03VejucEYJg==}
     engines: {node: '>=20'}
 
   '@lwmacct/260729-ba-framework@0.7.260730':
@@ -328,6 +346,10 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
 
+  hono@4.12.32:
+    resolution: {integrity: sha512-XcuyW9qE2kJn07PkecMOBd5Vq/hMy7mmGw+idz1yblbg9N17ijJODrvPkn7/dwL3Kulj8LcRJ69DLOWf91dRUg==}
+    engines: {node: '>=16.9.0'}
+
   tsx@4.23.1:
     resolution: {integrity: sha512-GQHnkIfxyx1wYCOS/wonik5MVRZU9hi1TEZmzGZSCJB1y9YgoZ8H6itNE/u4suE+yLmOzuE4E5S4TZ/ZX2wcWQ==}
     engines: {node: '>=18.0.0'}
@@ -421,9 +443,24 @@ snapshots:
   '@esbuild/win32-x64@0.28.1':
     optional: true
 
+  '@hono/node-server@2.0.12(hono@4.12.32)':
+    dependencies:
+      hono: 4.12.32
+
   '@lwmacct/260729-ba-context-baton@0.5.260729': {}
 
   '@lwmacct/260729-ba-context-baton@0.6.260730': {}
+
+  '@lwmacct/260729-ba-executor@0.6.260730':
+    dependencies:
+      '@hono/node-server': 2.0.12(hono@4.12.32)
+      '@lwmacct/260729-ba-context-baton': 0.5.260729
+      '@lwmacct/260729-ba-framework': 0.5.260729
+      hono: 4.12.32
+
+  '@lwmacct/260729-ba-framework@0.5.260729':
+    dependencies:
+      '@lwmacct/260729-ba-context-baton': 0.5.260729
 
   '@lwmacct/260729-ba-framework@0.7.260730':
     dependencies:
@@ -524,6 +561,8 @@ snapshots:
 
   fsevents@2.3.3:
     optional: true
+
+  hono@4.12.32: {}
 
   tsx@4.23.1:
     dependencies:
