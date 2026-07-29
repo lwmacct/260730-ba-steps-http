@@ -16,8 +16,8 @@ importers:
         version: 0.7.260730
     devDependencies:
       '@lwmacct/260729-ba-executor':
-        specifier: ^0.7.260730
-        version: 0.7.260730
+        specifier: ^0.8.260730
+        version: 0.8.260730
       '@types/node':
         specifier: ^26.1.2
         version: 26.1.2
@@ -200,8 +200,8 @@ packages:
     resolution: {integrity: sha512-be/VpG6HEpHfCgU79vnNEbZ13358zpeZlZdzTAljt/GqnXXAnUzfob+weVofBq8vptDq/nx0Mlj2Uqm1lTvmbg==}
     engines: {node: '>=20'}
 
-  '@lwmacct/260729-ba-executor@0.7.260730':
-    resolution: {integrity: sha512-iFbTaEyx5FsQICEyeF6p9GWzB4pStxIfWZHu0eIxjcYXZsH8rqtZL5kEVKAhDMm0LmTHF4xMCqwlYrZ/zypVSA==}
+  '@lwmacct/260729-ba-executor@0.8.260730':
+    resolution: {integrity: sha512-io35mN7mIQPxrPwseoGB/6gtn+/8qahlw5lvuuj01b9JruZLAP6ghkpsk68ZW1NM5ozGMmIEiY10jzpXc1MM7w==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -336,6 +336,10 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  chokidar@4.0.3:
+    resolution: {integrity: sha512-Qgzu8kfBvo+cA4962jnP1KkS6Dop5NS6g7R5LFYJr4b8Ub94PPQXUksCw9PvXoeXPRRddRNC5C1JQUR2SMGtnA==}
+    engines: {node: '>= 14.16.0'}
+
   esbuild@0.28.1:
     resolution: {integrity: sha512-HrJrvZv5ayxBzPfwphOoNzkzOIIlifzk0KJrGK2c8R4+LKpMtpYLQeUdjnwjWv/LZlkH2laZk+4w78pi99D4Vw==}
     engines: {node: '>=18'}
@@ -349,6 +353,10 @@ packages:
   hono@4.12.32:
     resolution: {integrity: sha512-XcuyW9qE2kJn07PkecMOBd5Vq/hMy7mmGw+idz1yblbg9N17ijJODrvPkn7/dwL3Kulj8LcRJ69DLOWf91dRUg==}
     engines: {node: '>=16.9.0'}
+
+  readdirp@4.1.2:
+    resolution: {integrity: sha512-GDhwkLfywWL2s6vEjyhri+eXmfH6j1L7JE27WhqLeYzoh/A3DBaYGEj2H/HFZCn/kMfim73FXxEJTw06WtxQwg==}
+    engines: {node: '>= 14.18.0'}
 
   tsx@4.23.1:
     resolution: {integrity: sha512-GQHnkIfxyx1wYCOS/wonik5MVRZU9hi1TEZmzGZSCJB1y9YgoZ8H6itNE/u4suE+yLmOzuE4E5S4TZ/ZX2wcWQ==}
@@ -451,11 +459,12 @@ snapshots:
 
   '@lwmacct/260729-ba-context-baton@0.6.260730': {}
 
-  '@lwmacct/260729-ba-executor@0.7.260730':
+  '@lwmacct/260729-ba-executor@0.8.260730':
     dependencies:
       '@hono/node-server': 2.0.12(hono@4.12.32)
       '@lwmacct/260729-ba-context-baton': 0.5.260729
       '@lwmacct/260729-ba-framework': 0.5.260729
+      chokidar: 4.0.3
       hono: 4.12.32
 
   '@lwmacct/260729-ba-framework@0.5.260729':
@@ -530,6 +539,10 @@ snapshots:
   '@typescript/typescript-win32-x64@7.0.2':
     optional: true
 
+  chokidar@4.0.3:
+    dependencies:
+      readdirp: 4.1.2
+
   esbuild@0.28.1:
     optionalDependencies:
       '@esbuild/aix-ppc64': 0.28.1
@@ -563,6 +576,8 @@ snapshots:
     optional: true
 
   hono@4.12.32: {}
+
+  readdirp@4.1.2: {}
 
   tsx@4.23.1:
     dependencies:

@@ -30,10 +30,13 @@ pnpm run start
 pnpm run start -- --port 3001
 pnpm run dev
 pnpm run dev -- --port 3001
+pnpm run dev -- --poll --port 3001
 ```
 
 `start` 构建一次并启动 HTTP Host；`dev` 监听源码，在构建成功后自动重启 Host。Executor
-仅用于本仓库的本地运行和验证，不会打入发布的 Pack。
+默认只监听 `src/**/*.ts`、`package.json` 和 TypeScript 配置，不监听 `node_modules`；容器
+挂载目录无法稳定传递文件事件时使用 `--poll`。Executor 仅用于本仓库的本地运行和验证，
+不会打入发布的 Pack。
 
 也可以从命令行执行本地 Baton：
 
